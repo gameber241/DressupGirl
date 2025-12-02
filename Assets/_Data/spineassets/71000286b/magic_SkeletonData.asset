@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
   m_Name: magic_SkeletonData
   m_EditorClassIdentifier: spine-unity::Spine.Unity.SkeletonDataAsset
-  atlasAssets: []
+  atlasAssets:
+  - {fileID: 11400000, guid: ba293ef631781264e9378db08c888082, type: 2}
   scale: 0.01
   skeletonJSON: {fileID: 4900000, guid: cf058064ae2718e478b315574dfd13fc, type: 3}
   isUpgradingBlendModeMaterials: 0
