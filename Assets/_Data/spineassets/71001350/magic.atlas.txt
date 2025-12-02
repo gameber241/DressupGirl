@@ -1,0 +1,6 @@
+magic.png
+size:76,44
+filter:Linear,Linear
+pma:true
+jewels
+bounds:0,0,75,44

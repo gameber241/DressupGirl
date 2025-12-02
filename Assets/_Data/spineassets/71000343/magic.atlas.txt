@@ -1,0 +1,8 @@
+magic.png
+size:120,48
+filter:Linear,Linear
+pma:true
+brow71000343
+bounds:0,0,113,12
+eyes71000343
+bounds:0,14,117,34

@@ -1,0 +1,9 @@
+magic.png
+size:604,688
+filter:Linear,Linear
+pma:true
+bang_colour
+bounds:414,338,189,350
+offsets:177,0,366,350
+hairback_colour
+bounds:0,0,412,688

@@ -1,0 +1,10 @@
+magic.png
+size:328,708
+filter:Linear,Linear
+pma:true
+pantsL71001108
+bounds:168,0,159,708
+offsets:0,9,159,717
+pantsR71001108
+bounds:0,1,166,707
+offsets:25,10,191,717

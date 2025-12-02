@@ -1,0 +1,14 @@
+magic.png
+size:488,392
+filter:Linear,Linear
+pma:true
+coat_armL_down71001013
+bounds:281,0,101,173
+coat_armL_up71001013
+bounds:281,175,96,216
+coat_armR_down71001013
+bounds:384,0,101,173
+coat_armR_up71001013
+bounds:379,175,96,216
+coat_body71001013
+bounds:0,0,279,391

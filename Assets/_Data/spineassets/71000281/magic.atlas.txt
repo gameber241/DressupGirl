@@ -1,0 +1,11 @@
+magic.png
+size:376,676
+filter:Linear,Linear
+pma:true
+bang_light1
+bounds:0,523,161,152
+offsets:4,0,171,152
+hair1
+bounds:163,500,197,175
+hairback1
+bounds:0,0,373,498

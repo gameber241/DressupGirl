@@ -1,0 +1,14 @@
+magic.png
+size:496,468
+filter:Linear,Linear
+pma:true
+armDOWNR
+bounds:272,38,100,214
+armrdown
+bounds:272,254,101,214
+armrup
+bounds:374,58,120,194
+armrupL
+bounds:375,274,119,194
+body
+bounds:0,0,270,468

@@ -1,0 +1,12 @@
+magic.png
+size:660,572
+filter:Linear,Linear
+pma:true
+dress_armL_up71000440
+bounds:577,264,76,167
+dress_armR_up71000440
+bounds:577,433,83,138
+dress_back71000440
+bounds:413,2,162,569
+dress_body71000440
+bounds:0,0,411,571

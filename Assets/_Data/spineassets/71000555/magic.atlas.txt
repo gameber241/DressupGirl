@@ -1,0 +1,14 @@
+magic.png
+size:436,364
+filter:Linear,Linear
+pma:true
+lsts_armL_down71000555
+bounds:237,0,98,145
+lsts_armL_up71000555
+bounds:328,147,88,216
+lsts_armR_down71000555
+bounds:337,0,98,145
+lsts_armR_up71000555
+bounds:237,147,89,216
+lsts_body71000555
+bounds:0,16,235,347

@@ -1,0 +1,8 @@
+magic.png
+size:124,148
+filter:Linear,Linear
+pma:true
+shoesL1
+bounds:0,0,61,146
+shoesR1
+bounds:63,0,61,146

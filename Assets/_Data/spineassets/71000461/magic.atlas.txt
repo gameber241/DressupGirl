@@ -1,0 +1,10 @@
+magic.png
+size:1072,1112
+filter:Linear,Linear
+pma:true
+dress
+bounds:0,0,985,1111
+dressL
+bounds:987,967,85,144
+dressR
+bounds:987,821,79,144

@@ -1,0 +1,14 @@
+magic.png
+size:780,516
+filter:Linear,Linear
+pma:true
+dressLup
+bounds:603,0,86,170
+dressRdown
+bounds:603,345,114,171
+dressRup
+bounds:691,0,86,170
+dressbody
+bounds:0,13,601,503
+dressldown
+bounds:603,172,114,171

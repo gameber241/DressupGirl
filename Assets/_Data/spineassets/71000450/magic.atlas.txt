@@ -1,0 +1,14 @@
+magic.png
+size:444,504
+filter:Linear,Linear
+pma:true
+body
+bounds:0,45,297,457
+ldown
+bounds:299,329,116,173
+lup
+bounds:299,0,70,152
+rdown
+bounds:299,154,116,173
+rup
+bounds:371,0,70,152

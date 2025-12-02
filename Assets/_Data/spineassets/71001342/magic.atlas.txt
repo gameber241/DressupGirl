@@ -1,0 +1,8 @@
+magic.png
+size:52,56
+filter:Linear,Linear
+pma:true
+earl
+bounds:0,1,30,52
+earr
+bounds:32,0,19,53

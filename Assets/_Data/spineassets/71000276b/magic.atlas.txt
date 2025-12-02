@@ -1,0 +1,8 @@
+magic.png
+size:596,376
+filter:Linear,Linear
+pma:true
+bangs_colour1
+bounds:414,170,182,206
+hairback_colour1
+bounds:0,0,412,376

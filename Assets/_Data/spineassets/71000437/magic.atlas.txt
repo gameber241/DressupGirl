@@ -1,0 +1,6 @@
+magic.png
+size:392,496
+filter:Linear,Linear
+pma:true
+dress_body71000437
+bounds:0,0,389,494
