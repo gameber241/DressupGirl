@@ -1,8 +1,0 @@
-magic.png
-size:256,168
-filter:Linear,Linear
-pma:true
-shosel
-bounds:0,0,126,167
-shoser
-bounds:128,0,126,167

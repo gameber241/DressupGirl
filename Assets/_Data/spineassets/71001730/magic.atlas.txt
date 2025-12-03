@@ -1,6 +1,0 @@
-magic.png
-size:36,16
-filter:Linear,Linear
-pma:true
-mouth
-bounds:0,0,34,4

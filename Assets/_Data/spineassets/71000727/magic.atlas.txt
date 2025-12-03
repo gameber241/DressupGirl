@@ -1,9 +1,0 @@
-magic.png
-size:128,208
-filter:Linear,Linear
-pma:true
-socksL71000727
-bounds:64,2,61,205
-socksR71000727
-bounds:0,0,62,207
-offsets:0,0,62,225

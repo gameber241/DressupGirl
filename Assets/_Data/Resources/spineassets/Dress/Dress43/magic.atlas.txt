@@ -1,0 +1,7 @@
+magic.png
+size:304,548
+filter:Linear,Linear
+pma:true
+dress_body71000444
+bounds:0,0,304,547
+offsets:0,66,304,641

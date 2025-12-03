@@ -1,7 +1,0 @@
-magic.png
-size:224,736
-filter:Linear,Linear
-sockl
-bounds:0,0,111,736
-sockr
-bounds:113,0,111,736

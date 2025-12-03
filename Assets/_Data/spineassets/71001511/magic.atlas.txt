@@ -1,8 +1,0 @@
-magic.png
-size:532,248
-filter:Linear,Linear
-pma:true
-wingL71001511
-bounds:0,0,265,247
-wingR71001511
-bounds:267,0,265,247

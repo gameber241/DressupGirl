@@ -1,0 +1,6 @@
+magic.png
+size:176,104
+filter:Linear,Linear
+pma:true
+headwear71000947
+bounds:0,0,174,102

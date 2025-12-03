@@ -1,6 +1,0 @@
-magic.png
-size:160,352
-filter:Linear,Linear
-pma:true
-hair
-bounds:0,0,160,350

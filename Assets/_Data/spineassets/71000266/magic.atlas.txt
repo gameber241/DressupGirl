@@ -1,9 +1,0 @@
-magic.png
-size:316,500
-filter:Linear,Linear
-pma:true
-bang
-bounds:0,243,315,257
-light
-bounds:0,0,315,241
-offsets:0,0,315,256

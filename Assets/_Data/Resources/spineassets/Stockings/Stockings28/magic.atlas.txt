@@ -1,0 +1,8 @@
+magic.png
+size:160,388
+filter:Linear,Linear
+pma:true
+socksL71000729
+bounds:81,0,78,386
+socksR71000729
+bounds:0,0,79,386

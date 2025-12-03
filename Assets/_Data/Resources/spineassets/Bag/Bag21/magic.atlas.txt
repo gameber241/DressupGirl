@@ -1,0 +1,7 @@
+magic.png
+size:216,308
+filter:Linear,Linear
+pma:true
+bag71001422
+bounds:0,0,216,308
+offsets:20,0,236,308

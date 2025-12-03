@@ -1,6 +1,0 @@
-magic.png
-size:96,68
-filter:Linear,Linear
-pma:true
-necklace71001314
-bounds:0,0,94,68

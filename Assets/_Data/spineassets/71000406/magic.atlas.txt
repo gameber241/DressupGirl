@@ -1,7 +1,0 @@
-magic.png
-size:372,452
-filter:Linear,Linear
-pma:true
-dress_body71000406
-bounds:0,0,369,452
-offsets:1,10,370,462

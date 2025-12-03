@@ -1,0 +1,7 @@
+magic.png
+size:188,280
+filter:Linear,Linear
+SHOSEl
+bounds:0,0,93,280
+SHOSEr
+bounds:95,0,93,280

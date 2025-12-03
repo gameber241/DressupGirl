@@ -1,5 +1,0 @@
-magic.png
-size:64,36
-filter:Linear,Linear
-neck
-bounds:0,0,62,35

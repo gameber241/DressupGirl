@@ -1,0 +1,14 @@
+magic.png
+size:196,592
+filter:Linear,Linear
+pma:true
+lsts7
+bounds:0,390,181,199
+lsts7LUP
+bounds:0,166,85,222
+lsts7Ldown
+bounds:0,0,96,164
+lsts7RUP
+bounds:87,166,85,222
+lsts7Rdown
+bounds:98,0,96,164

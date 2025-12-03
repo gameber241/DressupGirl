@@ -1,7 +1,0 @@
-magic.png
-size:248,176
-filter:Linear,Linear
-pma:true
-skirt71000628
-bounds:0,0,246,175
-offsets:1,1,255,176

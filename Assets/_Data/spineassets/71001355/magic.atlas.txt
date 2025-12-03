@@ -1,6 +1,0 @@
-magic.png
-size:140,120
-filter:Linear,Linear
-pma:true
-jewels11
-bounds:0,0,140,120

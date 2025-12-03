@@ -1,0 +1,6 @@
+magic.png
+size:272,312
+filter:Linear,Linear
+pma:true
+tail71001606
+bounds:0,0,272,310

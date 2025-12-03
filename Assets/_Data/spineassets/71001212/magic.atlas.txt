@@ -1,6 +1,0 @@
-magic.png
-size:136,52
-filter:Linear,Linear
-pma:true
-glasses71001212
-bounds:0,0,136,51
