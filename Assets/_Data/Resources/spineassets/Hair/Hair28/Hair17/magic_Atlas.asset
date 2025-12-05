@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
   m_Name: magic_Atlas
   m_EditorClassIdentifier: spine-unity::Spine.Unity.SpineAtlasAsset
-  atlasFile: {fileID: 4900000, guid: 2bf69cb1e27fd8f41b62ab1e1c0223b9, type: 3}
+  atlasFile: {fileID: 4900000, guid: 4fc9abe1f90f28f47acdb11703e97cc1, type: 3}
   materials:
-  - {fileID: 2100000, guid: fe2cc71742a70b341a0ab98cc7b5cd02, type: 2}
+  - {fileID: 2100000, guid: 180fd7d3fcf8aae40b13e5915b33e8b5, type: 2}
