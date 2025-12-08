@@ -4,7 +4,7 @@ using UnityEngine;
 public class HairDoll : BaseItemDoll
 {
     
-    protected override void Init(SkeletonDataAsset dataSkeleton)
+    public override void Init(SkeletonDataAsset dataSkeleton)
     {
         base.Init(dataSkeleton);
         _currentSkeleton.Skeleton.SetAttachment("hairback", null);
