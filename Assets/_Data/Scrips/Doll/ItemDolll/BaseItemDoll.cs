@@ -16,7 +16,7 @@ public class BaseItemDoll : MonoBehaviour
     {
         gameObject.SetActive(true);
         _currentSkeleton.skeletonDataAsset = dataSkeleton;
-        _currentSkeleton.Initialize(true);
+        _currentSkeleton.Initialize(true); 
     }
 
     protected virtual void OnEnable()
