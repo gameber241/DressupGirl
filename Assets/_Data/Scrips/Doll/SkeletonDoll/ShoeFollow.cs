@@ -4,6 +4,7 @@ public class ShoeFollow : SkeletonFollow
 {
     protected override void Update()
     {
+        if (_master == null) return;
         foreach (var masterBone in _master.Bones)
         {
             var shoeBone = _skeletonCurrent.FindBone(masterBone.Data.Name);
