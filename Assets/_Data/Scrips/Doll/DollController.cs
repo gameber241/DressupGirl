@@ -6,14 +6,12 @@ public class DollController : MonoBehaviour
 {
     public BaseItemDoll[] skeletons;
 
-    /// <summary>
-    /// Awake is called when the script instance is being loaded.
-    /// </summary>
+    public String[] animationNames = { "interactive1", "interactive2", "interactive3", "interactive4" };
+    public String[] poseName = { "pose1", "pose2", "pose3", "pose4", "pose5", "pose6", "stand" };
+
     void Awake()
     {
-        UpdateItemDoll(EITEMDOLL.WING, "Wing0");
-        UpdateItemDoll(EITEMDOLL.TAIL, "Tail10");
-        UpdateColor(EITEMDOLL.BODY, Color.black);
+        PlayAnimation(animationNames[0]);
     }
 
     protected async virtual void UpdateItemDoll(EITEMDOLL type, String name)
@@ -136,5 +134,15 @@ public class DollController : MonoBehaviour
                 skeletons[(int)EITEMDOLL.BODY].UpdateColor(color);
                 break;
         }
+    }
+
+    protected virtual void PlayAnimation(String name)
+    {
+        skeletons[(int)EITEMDOLL.BODY].PlayAnimation(name);
+    }
+
+    protected virtual void PlayPose(String name)
+    {
+        skeletons[(int)EITEMDOLL.BODY].PlayAnimation(name);
     }
 }

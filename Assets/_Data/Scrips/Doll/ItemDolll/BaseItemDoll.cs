@@ -1,3 +1,4 @@
+using System;
 using Spine.Unity;
 using UnityEngine;
 
@@ -38,5 +39,11 @@ public class BaseItemDoll : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public virtual void PlayAnimation(String name)
+    {
+        _currentSkeleton.state.SetAnimation(0, name, false);
+    }
+    
 
 }
