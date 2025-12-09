@@ -22,6 +22,8 @@ public class ChangeClothesController : MonoBehaviour
     public List<BtnChooseList> listBtnChooseClothes;
     public List<ItemClothes> listItemClothes;
 
+    [SerializeField] public DollController currentDoll;
+
 
     private void Awake()
     {
@@ -76,14 +78,36 @@ public class ChangeClothesController : MonoBehaviour
         else
         {
             var sprites = await Utils.LoadAllSprites(btn.thumbModels.name);
+            string nameClothes = "";
+
+            if (currentDoll.dollModel.dollItems.TryGetValue(btn.thumbModels.type, out var dollItem))
+            {
+                nameClothes = dollItem.name;
+            }
+
             foreach (Sprite sp in sprites)
             {
                 var item = Instantiate(itemClothes, pageClothes.content);
                 listItemClothes.Add(item);
+
                 item.Init(sp, btn.thumbModels.type, sp.name);
+
+                if (nameClothes == sp.name)
+                {
+                    item.Follow();
+                }
             }
         }
 
+    }
+
+    public virtual void HideListItemClothes()
+    {
+        foreach (var item in listItemClothes)
+        {
+            item.UnFollow();
+
+        }
     }
     public static void ClearChildren(Transform parent)
     {

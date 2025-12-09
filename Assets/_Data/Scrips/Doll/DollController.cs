@@ -9,14 +9,17 @@ public class DollController : MonoBehaviour
     public String[] animationNames = { "interactive1", "interactive2", "interactive3", "interactive4" };
     public String[] poseName = { "pose1", "pose2", "pose3", "pose4", "pose5", "pose6", "stand" };
 
+    public DollModel dollModel;
+
     void Awake()
     {
+        dollModel = new DollModel();
         PlayAnimation(animationNames[0]);
     }
 
-    protected async virtual void UpdateItemDoll(EITEMDOLL type, String name)
+    public async virtual void UpdateItemDoll(EITEMDOLL type, String name)
     {
-
+        dollModel.AddDollItem(type, new ItemDollModel(name));
         switch (type)
         {
             case EITEMDOLL.HAIR:
@@ -126,8 +129,10 @@ public class DollController : MonoBehaviour
         }
     }
 
-    protected virtual void UpdateColor(EITEMDOLL type, Color color)
+    public virtual void UpdateColor(EITEMDOLL type, Color color)
     {
+        dollModel.AddDollItem(type, new ItemDollModel(color));
+
         switch (type)
         {
             case EITEMDOLL.BODY:

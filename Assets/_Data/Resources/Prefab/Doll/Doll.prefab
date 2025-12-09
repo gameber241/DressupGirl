@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 8404388191468702568}
   - component: {fileID: 1699001381512200273}
   m_Layer: 0
-  m_Name: Mouse
+  m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1340,7 +1340,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dabe3c4f388a1194d8f0eaef5b71f9dd, type: 2}
+  - {fileID: 2100000, guid: a7a743afe29abae4fb96f4665b428a6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1397,7 +1397,7 @@ MonoBehaviour:
     materialsMaskDisabled:
     - {fileID: 2100000, guid: 1cc39cadd500f93439fc0b8ac9518fa1, type: 2}
     materialsInsideMask:
-    - {fileID: 2100000, guid: dabe3c4f388a1194d8f0eaef5b71f9dd, type: 2}
+    - {fileID: 2100000, guid: a7a743afe29abae4fb96f4665b428a6d, type: 2}
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
   _animationName: 
@@ -2604,6 +2604,19 @@ MonoBehaviour:
   - {fileID: 586562127368471731}
   - {fileID: 5111947732899810346}
   - {fileID: 1199886597327836175}
+  animationNames:
+  - interactive1
+  - interactive2
+  - interactive3
+  - interactive4
+  poseName:
+  - pose1
+  - pose2
+  - pose3
+  - pose4
+  - pose5
+  - pose6
+  - stand
 --- !u!1 &7618686830071351816
 GameObject:
   m_ObjectHideFlags: 0

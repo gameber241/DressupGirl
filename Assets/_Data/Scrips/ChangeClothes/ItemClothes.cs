@@ -13,6 +13,9 @@ public class ItemClothes : BaseTouch, IBeginDragHandler, IEndDragHandler
     protected EITEMDOLL typeClothes;
     protected String nameClothes;
     protected Color colorClothes;
+
+
+    bool isButtonColor = false;
     public virtual void Init(Sprite icon, EITEMDOLL type, String name)
     {
         nameClothes = name;
@@ -23,6 +26,7 @@ public class ItemClothes : BaseTouch, IBeginDragHandler, IEndDragHandler
 
     public virtual void InitColor(Color color)
     {
+        isButtonColor = true;
         colorImg.color = color;
         colorImg.gameObject.SetActive(true);
         colorClothes = color;
@@ -30,6 +34,7 @@ public class ItemClothes : BaseTouch, IBeginDragHandler, IEndDragHandler
 
     public virtual void Follow()
     {
+        ChangeClothesController.Instance.HideListItemClothes();
         bgSelect.SetActive(true);
         star.SetActive(true);
     }
@@ -49,7 +54,10 @@ public class ItemClothes : BaseTouch, IBeginDragHandler, IEndDragHandler
     protected override void OnTap(PointerEventData eventData)
     {
         Follow();
-
+        if (isButtonColor == false)
+            ChangeClothesController.Instance.currentDoll.UpdateItemDoll(typeClothes, nameClothes);
+        else
+            ChangeClothesController.Instance.currentDoll.UpdateColor(typeClothes, colorClothes);
     }
     public override void OnBeginDrag(PointerEventData eventData)
     {
