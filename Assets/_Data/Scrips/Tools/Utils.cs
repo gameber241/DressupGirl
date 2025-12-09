@@ -22,4 +22,25 @@ public class Utils
         return asset;
     }
 
+    public static async Task<Sprite> LoadSprite(string name, string type)
+    {
+        string path = $"Thumb/{type}/{name}";
+
+        var request = Resources.LoadAsync<Sprite>(path);
+
+        // Chờ cho đến khi tải xong
+        while (!request.isDone)
+        {
+            await Task.Yield();
+        }
+
+        var result = request.asset as Sprite;
+
+        if (result == null)
+        {
+            Debug.LogError($"❌ Không tìm thấy Sprite hoặc sai Import Settings tại: {path}");
+        }
+
+        return result;
+    }
 }
