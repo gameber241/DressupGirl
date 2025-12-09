@@ -6,7 +6,7 @@ public enum EITEMDOLL
     SUBHAIR = 3,
     BODY = 4,
     EYE = 5,
-    MOUSE = 6,
+    MOUTH = 6,
     GLASSES = 7,
     DRESS = 8,
     SHIRT = 9,

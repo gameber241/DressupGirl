@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
+
 public class DollModel
 {
     public Dictionary<EITEMDOLL, ItemDollModel> dollItems = new();

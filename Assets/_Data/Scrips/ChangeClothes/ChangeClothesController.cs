@@ -1,111 +1,96 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System; // Để dùng Enum
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using NUnit.Framework.Constraints; // Để dùng Enum
 
 public class ChangeClothesController : MonoBehaviour
 {
+
+    public static ChangeClothesController Instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public ScrollRect listButton;
     public ScrollRect pageClothes;
 
+    [SerializeField] protected DataClothes dataClothes;
+    [SerializeField] protected BtnChooseList btnChooseList;
+    [SerializeField] protected ItemClothes itemClothes;
+    [SerializeField] protected DataColorHairs dataColorHairs;
+
+    public List<BtnChooseList> listBtnChooseClothes;
+    public List<ItemClothes> listItemClothes;
+
+
     private void Awake()
     {
+        Instance = this;
+        listBtnChooseClothes = new();
         this.LoadAssetListButtonClothes();
-    }
-
-    private void OnEnable()
-    {
-        // Đăng ký lắng nghe: Khi sự kiện OnRequestChangeCategory xảy ra -> Chạy hàm LoadAndSpawnClothesFromResource
-        GameEvents.OnRequestChangeCategory.AddListener(LoadAndSpawnClothesFromResource);
-    }
-
-    private void OnDisable()
-    {
-        // Hủy đăng ký khi object bị tắt (Rất quan trọng để tránh lỗi Memory Leak)
-        GameEvents.OnRequestChangeCategory.RemoveListener(LoadAndSpawnClothesFromResource);
     }
 
     private void LoadAssetListButtonClothes()
     {
-        // 1. Xóa sạch nút cũ (nếu có)
-        foreach (Transform child in listButton.content)
+
+        for (int i = 0; i < dataClothes.listThumbnailClothes.Length; i++)
         {
-            Destroy(child.gameObject);
+            var model = dataClothes.listThumbnailClothes[i];
+            BtnChooseList btn = Instantiate(btnChooseList, listButton.content);
+            btn.Init(model);
+            if (i == dataClothes.listThumbnailClothes.Length - 1)
+            {
+                btn.HideLine();
+            }
+            listBtnChooseClothes.Add(btn);
         }
 
-        GameObject categoryBtnPrefab = PrefabManager.Instance.buttonListClothes;
+        listBtnChooseClothes[0].Follow();
+    }
 
-        // 2. Lặp qua tất cả các giá trị có trong Enum ClothesType
-        // Đây là cách "đếm" số lượng loại đồ chuẩn nhất
-        foreach (THUMB_DOLL type in Enum.GetValues(typeof(THUMB_DOLL)))
+
+    public virtual void HideBtnClothes()
+    {
+        foreach (var item in listBtnChooseClothes)
         {
-            
+            item.UnFollow();
 
-            // Spawn nút
-            GameObject btnObj = Instantiate(categoryBtnPrefab, listButton.content);
-
-            var btnScript = btnObj.GetComponent<BtnChooseList>();
-            if (btnScript != null)
-            {
-                btnScript.SetType(type);
-            }
         }
     }
 
     // Hàm này phải khớp tham số với Event (nhận vào THUMB_DOLL)
-    private void LoadAndSpawnClothesFromResource(THUMB_DOLL type)
+    public async void LoadAndSpawnClothesFromResource(BtnChooseList btn)
     {
-        Debug.Log($"Controller nhận được lệnh load: {type}");
 
-        if (pageClothes != null && pageClothes.content != null)
+        ClearChildren(pageClothes.content);
+        listItemClothes.Clear();
+        if (btn.thumbModels.type == EITEMDOLL.BODY)
         {
-            foreach (Transform child in pageClothes.content)
+            foreach (Color sp in dataColorHairs.colors)
             {
-                // Dùng DestroyImmediate trong Editor mode, Destroy khi chạy thật
-                // Nhưng an toàn nhất cứ dùng Destroy
-                Destroy(child.gameObject);
+                var item = Instantiate(itemClothes, pageClothes.content);
+                listItemClothes.Add(item);
+                item.InitColor(sp);
+            }
+        }
+        else
+        {
+            var sprites = await Utils.LoadAllSprites(btn.thumbModels.name);
+            foreach (Sprite sp in sprites)
+            {
+                var item = Instantiate(itemClothes, pageClothes.content);
+                listItemClothes.Add(item);
+                item.Init(sp, btn.thumbModels.type, sp.name);
             }
         }
 
-        string path = $"Thumb/{type.ToString()}";
-
-        // Load toàn bộ ảnh trong folder đó
-        // LoadAll sẽ lấy tất cả file có dạng Sprite trong folder
-        Sprite[] allSprites = Resources.LoadAll<Sprite>(path);
-
-        // Kiểm tra xem có load được gì không
-        if (allSprites == null || allSprites.Length == 0)
+    }
+    public static void ClearChildren(Transform parent)
+    {
+        foreach (Transform child in parent)
         {
-            Debug.LogWarning($"⚠️ Không tìm thấy ảnh nào tại đường dẫn: Resources/{path}");
-            return;
-        }
-
-        GameObject itemClothesPrefab = PrefabManager.Instance.itemClothes;
-
-        // BƯỚC 4: Spawn từng món đồ ra giao diện
-        foreach (Sprite sp in allSprites)
-        {
-            // 1. Tạo ra node item mới
-            GameObject newItemObj = Instantiate(itemClothesPrefab, pageClothes.content);
-
-            // 2. Tìm thằng con tên "Clothers" NẰM TRONG thằng mới sinh ra (newItemObj)
-            // Lưu ý: Phải dùng newItemObj.transform.Find chứ không dùng transform.Find khơi khơi
-            Transform clothersTrans = newItemObj.transform.Find("Clothers");
-
-            if (clothersTrans != null)
-            {
-                // 3. Lấy Image và gán Sprite
-                Image clothesImage = clothersTrans.GetComponent<Image>();
-                if (clothesImage != null)
-                {
-                    clothesImage.sprite = sp; // Gắn ảnh vừa load được vào
-                }
-            }
-            else
-            {
-                Debug.LogError("❌ Trong Prefab không có object con nào tên là 'Clothers' cả! Kiểm tra lại tên đi.");
-            }
+            Destroy(child.gameObject);
         }
     }
+
 }

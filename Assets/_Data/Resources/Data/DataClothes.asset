@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92376b1b09c5b75449d810a35b0410c2, type: 3}
+  m_Name: DataClothes
+  m_EditorClassIdentifier: Assembly-CSharp::DataClothes
+  listThumbnailClothes:
+  - type: 4
+    imageIcon: {fileID: 21300000, guid: 6f7b98724cfb35c40aa8348a0fd91ff0, type: 3}
+    name: Body
+  - type: 17
+    imageIcon: {fileID: 21300000, guid: 2046acec60dab2e43b3d1ec464640847, type: 3}
+    name: Hair
+  - type: 5
+    imageIcon: {fileID: 21300000, guid: e6e65863d788bc8479f0ed44bdf42040, type: 3}
+    name: Eye
+  - type: 6
+    imageIcon: {fileID: 21300000, guid: 4aff3382b87d4934ab1e1cc5869581f4, type: 3}
+    name: Mouth
+  - type: 8
+    imageIcon: {fileID: 21300000, guid: c5e14c1bbae99ee46afddd34375cfca7, type: 3}
+    name: Dress
+  - type: 9
+    imageIcon: {fileID: 21300000, guid: 0828732525fab1145bc3c4ebc07bad91, type: 3}
+    name: Shirt
+  - type: 12
+    imageIcon: {fileID: 21300000, guid: 70777fd9bfe2f8941aa8a6ab2dd5569b, type: 3}
+    name: Jacket
+  - type: 10
+    imageIcon: {fileID: 21300000, guid: 057db4b33dfabc84585729c573b44d04, type: 3}
+    name: ShortSkirt
+  - type: 11
+    imageIcon: {fileID: 21300000, guid: bc93ee108fbc9ed45ab67af077bd5917, type: 3}
+    name: Trousers
+  - type: 13
+    imageIcon: {fileID: 21300000, guid: e992ba9da4a9e204389669f2b2a61e21, type: 3}
+    name: Stockings
+  - type: 14
+    imageIcon: {fileID: 21300000, guid: c6db54d4b533b7d4caf3f1c8b1b8a3ce, type: 3}
+    name: Shoe
+  - type: 18
+    imageIcon: {fileID: 21300000, guid: af7f0d4d2a52538409d894f368ec5c73, type: 3}
+    name: Hat
+  - type: 7
+    imageIcon: {fileID: 21300000, guid: 80fc7d7d0a58e3244a06af6e0bdc6bf8, type: 3}
+    name: Glasses
+  - type: 15
+    imageIcon: {fileID: 21300000, guid: 886107597e9ff9d4792ff6665b0ebabb, type: 3}
+    name: Jewelry
+  - type: 16
+    imageIcon: {fileID: 21300000, guid: a52565c26f91cdc42b34a7ead060ee0d, type: 3}
+    name: Bag
+  - type: 0
+    imageIcon: {fileID: 21300000, guid: 9246749a5ab030f4eb2fb3726f4bb272, type: 3}
+    name: Wing
+  - type: 1
+    imageIcon: {fileID: 21300000, guid: 06052eac42f6d904da295e3ad789ef09, type: 3}
+    name: Tail

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dacd2f07dda1d4f980950eeacbbbec, type: 3}
+  m_Name: DataColorHairs
+  m_EditorClassIdentifier: Assembly-CSharp::DataColorHairs
+  colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.9372549, b: 0.8980392, a: 1}
+  - {r: 0.9490196, g: 0.8745098, b: 0.81960785, a: 1}
+  - {r: 0.8901961, g: 0.78039217, b: 0.73333335, a: 1}
+  - {r: 0.78039217, g: 0.67058825, b: 0.62352943, a: 1}
+  - {r: 0.6, g: 0.5254902, b: 0.47058824, a: 1}
+  - {r: 0.4862745, g: 0.36078432, b: 0.3647059, a: 1}
+  - {r: 0.60784316, g: 0.5921569, b: 0.5803922, a: 1}
+  - {r: 0.627451, g: 0.6901961, b: 0.7882353, a: 1}
+  - {r: 0.76862746, g: 0.4862745, b: 0.43137255, a: 1}
+  - {r: 0.85882354, g: 0.39215687, b: 0.36862746, a: 1}
+  - {r: 0.827451, g: 0.7647059, b: 0.80784315, a: 1}

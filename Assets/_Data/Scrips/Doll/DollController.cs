@@ -43,9 +43,9 @@ public class DollController : MonoBehaviour
                 skeletons[(int)EITEMDOLL.EYE].Init(dataEye);
                 break;
 
-            case EITEMDOLL.MOUSE:
+            case EITEMDOLL.MOUTH:
                 SkeletonDataAsset dataMouse = await Utils.LoadSkeletonDataAsync(name, "Mouse");
-                skeletons[(int)EITEMDOLL.MOUSE].Init(dataMouse);
+                skeletons[(int)EITEMDOLL.MOUTH].Init(dataMouse);
                 break;
 
             case EITEMDOLL.GLASSES:
