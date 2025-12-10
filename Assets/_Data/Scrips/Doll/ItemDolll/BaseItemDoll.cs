@@ -42,7 +42,7 @@ public class BaseItemDoll : MonoBehaviour
 
     public virtual void PlayAnimation(String name)
     {
-        _currentSkeleton.state.SetAnimation(0, name, true);
+        _currentSkeleton.state.SetAnimation(0, name, false);
     }
     
 

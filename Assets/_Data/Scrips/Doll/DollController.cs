@@ -1,6 +1,8 @@
-using System;
+﻿using System;
 using Spine.Unity;
 using UnityEngine;
+using DG.Tweening;
+using Random = UnityEngine.Random;
 
 public class DollController : MonoBehaviour
 {
@@ -11,10 +13,18 @@ public class DollController : MonoBehaviour
 
     public DollModel dollModel;
 
+    [Header("--- FOCUS SETTINGS ---")]
+    [SerializeField] private Vector3 defaultPos = new Vector3(0, -3.6f, 0);
+    [SerializeField] private Vector3 defaultScale = new Vector3(1.3f, 1.3f, 1f);
+
+    [SerializeField] private Vector3 upperBodyPos = new Vector3(0, -25f, 0);
+    [SerializeField] private Vector3 upperBodyScale = new Vector3(3f, 3f, 1f);
+    [SerializeField] private float animDuration = 0.5f; // Thời gian zoom (giây)
+
     void Awake()
     {
         dollModel = new DollModel();
-        PlayAnimation(animationNames[1]);
+        PlayAnimation(animationNames[0]);
     }
 
     public async virtual void UpdateItemDoll(EITEMDOLL type, String name)
@@ -171,7 +181,7 @@ public class DollController : MonoBehaviour
                 break;
         }
 
-
+        this.PlayRandomAnimation();
     }
 
     public virtual void UpdateColor(EITEMDOLL type, Color color)
@@ -191,8 +201,84 @@ public class DollController : MonoBehaviour
         skeletons[(int)EITEMDOLL.BODY].PlayAnimation(name);
     }
 
+    // Hàm kiểm tra xem Body có đang bận diễn anim
+    private bool IsBodyPlayingAnimation()
+    {
+        // Lấy component SkeletonAnimation của Body
+        var bodySkeletonAnim = skeletons[(int)EITEMDOLL.BODY].GetComponent<SkeletonAnimation>();
+
+        if (bodySkeletonAnim == null) return false;
+
+        // Lấy Track 0 (Track chính)
+        var currentTrack = bodySkeletonAnim.AnimationState.GetCurrent(0);
+
+        if (currentTrack != null)
+        {
+            // Nếu đang chạy 1 trong các interactive animation thì báo là ĐANG BẬN
+            foreach (var animName in animationNames)
+            {
+                if (currentTrack.Animation.Name == animName && !currentTrack.IsComplete)
+                {
+                    return true; // Đang bận anim, return
+                }
+            }
+        }
+
+        return false; // Đang không có anim
+    }
+
+    public void PlayRandomAnimation()
+    {
+        // Nếu đang bận diễn thì thôi, không random nữa
+        if (IsBodyPlayingAnimation()) return;
+
+        // Nếu rảnh thì chạy
+        int randomIndex = Random.Range(1, this.animationNames.Length);
+        this.PlayAnimation(this.animationNames[randomIndex]);
+    }
     protected virtual void PlayPose(String name)
     {
         skeletons[(int)EITEMDOLL.BODY].PlayAnimation(name);
+    }
+
+    // Hàm xác định loại nào là thân trên
+    private bool IsUpperBody(EITEMDOLL type)
+    {
+        switch (type)
+        {
+            case EITEMDOLL.HAIR:
+            case EITEMDOLL.BACKHAIR:
+            case EITEMDOLL.SUBHAIR:
+            case EITEMDOLL.EYE:
+            case EITEMDOLL.MOUTH:
+            case EITEMDOLL.GLASSES:
+            case EITEMDOLL.HAT:
+            case EITEMDOLL.JEWELRY:
+            case EITEMDOLL.SHIRT:    // Áo thường tính là thân trên
+            case EITEMDOLL.JACKET:   // Áo khoác thân trên
+                return true;
+
+            // Các loại còn lại (Quần, Giày, Váy, Cánh, Đuôi...) thì để view toàn thân
+            default:
+                return false;
+        }
+    }
+
+    // Hàm thực hiện Zoom/Move bằng DOTween
+    public void SwitchView(EITEMDOLL type)
+    {
+        bool isUpper = IsUpperBody(type);
+
+        Vector3 targetPos = isUpper ? upperBodyPos : defaultPos;
+        Vector3 targetScale = isUpper ? upperBodyScale : defaultScale;
+
+        // DOKill: Hủy ngay lập tức các chuyển động cũ nếu đang chạy dở
+        transform.DOKill();
+
+        // Chuyển vị trí (Local Move)
+        // .SetEase(Ease.OutCubic): Hiệu ứng trượt nhẹ nhàng
+        transform.DOLocalMove(targetPos, animDuration).SetEase(Ease.OutCubic);
+
+        transform.DOScale(targetScale, animDuration).SetEase(Ease.OutCubic);
     }
 }

@@ -57,6 +57,10 @@ public class BtnChooseList : BaseTouch, IBeginDragHandler, IEndDragHandler
     {
         Follow();
 
+        if (ChangeClothesController.Instance.currentDoll != null)
+        {
+            ChangeClothesController.Instance.currentDoll.SwitchView(thumbModels.type);
+        }
     }
 
     public override void OnBeginDrag(PointerEventData eventData)

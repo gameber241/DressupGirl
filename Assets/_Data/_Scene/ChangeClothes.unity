@@ -237,7 +237,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 29
   m_TargetDisplay: 0
 --- !u!224 &71154091
 RectTransform:
@@ -1434,7 +1434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7130461650831319899, guid: 619f7c7d405c52946be194aa48373450, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7151411039823430386, guid: 619f7c7d405c52946be194aa48373450, type: 3}
       propertyPath: m_Name
@@ -1448,6 +1448,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1cc39cadd500f93439fc0b8ac9518fa1, type: 2}
+    - target: {fileID: 7930118743782462426, guid: 619f7c7d405c52946be194aa48373450, type: 3}
+      propertyPath: upperBodyPos.y
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930118743782462426, guid: 619f7c7d405c52946be194aa48373450, type: 3}
+      propertyPath: upperBodyScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930118743782462426, guid: 619f7c7d405c52946be194aa48373450, type: 3}
+      propertyPath: upperBodyScale.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8568522971254985699, guid: 619f7c7d405c52946be194aa48373450, type: 3}
       propertyPath: m_Mesh
       value: 
