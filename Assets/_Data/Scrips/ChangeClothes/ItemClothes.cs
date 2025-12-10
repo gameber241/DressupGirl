@@ -24,8 +24,9 @@ public class ItemClothes : BaseTouch, IBeginDragHandler, IEndDragHandler
         iconClothes.gameObject.SetActive(true);
     }
 
-    public virtual void InitColor(Color color)
+    public virtual void InitColor(EITEMDOLL type, Color color)
     {
+        typeClothes = type;
         isButtonColor = true;
         colorImg.color = color;
         colorImg.gameObject.SetActive(true);
@@ -49,6 +50,7 @@ public class ItemClothes : BaseTouch, IBeginDragHandler, IEndDragHandler
     private void Awake()
     {
         _parentScrollRect = GetComponentInParent<ScrollRect>();
+
     }
 
     protected override void OnTap(PointerEventData eventData)

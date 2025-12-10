@@ -58,7 +58,7 @@ public class DollController : MonoBehaviour
 
             case EITEMDOLL.DRESS:
                 SkeletonDataAsset dataDress = await Utils.LoadSkeletonDataAsync(name, "Dress");
-                skeletons[(int)EITEMDOLL.GLASSES].Init(dataDress);
+                skeletons[(int)EITEMDOLL.DRESS].Init(dataDress);
                 skeletons[(int)EITEMDOLL.SHIRT].Hide();
                 skeletons[(int)EITEMDOLL.SHORT_SKIRT].Hide();
                 skeletons[(int)EITEMDOLL.TROUSER].Hide();

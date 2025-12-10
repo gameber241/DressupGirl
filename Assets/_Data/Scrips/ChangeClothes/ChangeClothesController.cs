@@ -72,7 +72,7 @@ public class ChangeClothesController : MonoBehaviour
             {
                 var item = Instantiate(itemClothes, pageClothes.content);
                 listItemClothes.Add(item);
-                item.InitColor(sp);
+                item.InitColor(btn.thumbModels.type, sp);
             }
         }
         else
