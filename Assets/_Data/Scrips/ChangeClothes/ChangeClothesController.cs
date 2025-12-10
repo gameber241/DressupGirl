@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using NUnit.Framework.Constraints; // Để dùng Enum
+using NUnit.Framework.Constraints;
+using DG.Tweening; // Để dùng Enum
 
 public class ChangeClothesController : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class ChangeClothesController : MonoBehaviour
     public List<ItemClothes> listItemClothes;
 
     [SerializeField] public DollController currentDoll;
+
+    [SerializeField] private Transform leftObj;
+    [SerializeField] private Transform rightObj;
+    [SerializeField] private Transform headObj;
+    [SerializeField] private Transform changeClothes;
 
 
     private void Awake()
@@ -115,6 +121,30 @@ public class ChangeClothesController : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+
+    public virtual void BtnPhoto()
+    {
+        ShowUIPhoto();
+    }
+
+
+    private void ShowUIPhoto()
+    {
+        rightObj.DOLocalMove(rightObj.localPosition + new Vector3(500f, 0f, 0f), 1f).SetEase(Ease.InOutBack)
+                .OnComplete(() => { rightObj.gameObject.SetActive(false); });
+
+        leftObj.DOLocalMove(leftObj.localPosition + new Vector3(-500f, 0f, 0f), 1f).SetEase(Ease.InOutBack)
+                .OnComplete(() => { rightObj.gameObject.SetActive(false); });
+
+        headObj.DOLocalMove(headObj.localPosition + new Vector3(0f, 700f, 0f), 1f).SetEase(Ease.InOutBack)
+                .OnComplete(() => { headObj.gameObject.SetActive(false); });
+
+        changeClothes.DOLocalMove(changeClothes.localPosition + new Vector3(0f, -700f, 0f), 1f).SetEase(Ease.InOutBack)
+                .OnComplete(() => { changeClothes.gameObject.SetActive(false); });
+
+
+
     }
 
 }

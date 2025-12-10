@@ -13,6 +13,11 @@ public class SkeletonFollow : MonoBehaviour
     protected Skeleton _skeletonCurrent;
     protected virtual void Awake()
     {
+        Init();
+    }
+
+    public virtual void Init()
+    {
         _currentSkeleton = GetComponent<SkeletonAnimation>();
 
         _master = bodySketeton.Skeleton;
@@ -22,7 +27,11 @@ public class SkeletonFollow : MonoBehaviour
     protected virtual void Update()
     {
 
-        if (_master == null || _skeletonCurrent == null) return;
+        if (_master == null || _skeletonCurrent == null)
+        {
+            return;
+        }
+
 
 
         foreach (Bone masterBone in _master.Bones)
