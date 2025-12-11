@@ -3,6 +3,7 @@ using Spine.Unity;
 using UnityEngine;
 using DG.Tweening;
 using Random = UnityEngine.Random;
+using System.Collections;
 
 public class DollController : MonoBehaviour
 {
@@ -14,21 +15,22 @@ public class DollController : MonoBehaviour
     public DollModel dollModel;
 
     [Header("--- FOCUS SETTINGS ---")]
-    [SerializeField] private Vector3 defaultPos = new Vector3(0, -3.6f, 0);
-    [SerializeField] private Vector3 defaultScale = new Vector3(1.3f, 1.3f, 1f);
+    [SerializeField] private Vector3 defaultPos = new(0, -3.6f, 0);
+    [SerializeField] private Vector3 defaultScale = new(1.3f, 1.3f, 1f);
 
-    [SerializeField] private Vector3 upperBodyPos = new Vector3(0, -25f, 0);
-    [SerializeField] private Vector3 upperBodyScale = new Vector3(3f, 3f, 1f);
+    [SerializeField] private Vector3 upperBodyPos = new(0, -25f, 0);
+    [SerializeField] private Vector3 upperBodyScale = new(3f, 3f, 1f);
     [SerializeField] private float animDuration = 0.5f; // Thời gian zoom (giây)
 
     void Awake()
     {
         dollModel = new DollModel();
-        PlayAnimation(animationNames[0]);
     }
 
     public async virtual void UpdateItemDoll(EITEMDOLL type, String name)
     {
+        if (dollModel.dollItems.ContainsKey(type) == true)
+            if (dollModel.dollItems[type]?.name == name) return;
         dollModel.AddDollItem(type, new ItemDollModel(name));
         switch (type)
         {
@@ -181,7 +183,7 @@ public class DollController : MonoBehaviour
                 break;
         }
 
-        this.PlayRandomAnimation();
+        PlayRandomAnimation();
     }
 
     public virtual void UpdateColor(EITEMDOLL type, Color color)
@@ -192,6 +194,7 @@ public class DollController : MonoBehaviour
         {
             case EITEMDOLL.BODY:
                 skeletons[(int)EITEMDOLL.BODY].UpdateColor(color);
+                skeletons[(int)EITEMDOLL.BODYUP].UpdateColor(color);
                 break;
         }
     }
@@ -199,46 +202,48 @@ public class DollController : MonoBehaviour
     protected virtual void PlayAnimation(String name)
     {
         skeletons[(int)EITEMDOLL.BODY].PlayAnimation(name);
+        skeletons[(int)EITEMDOLL.BODYUP].PlayAnimation(name);
     }
 
-    // Hàm kiểm tra xem Body có đang bận diễn anim
     private bool IsBodyPlayingAnimation()
     {
-        // Lấy component SkeletonAnimation của Body
         var bodySkeletonAnim = skeletons[(int)EITEMDOLL.BODY].GetComponent<SkeletonAnimation>();
 
         if (bodySkeletonAnim == null) return false;
 
-        // Lấy Track 0 (Track chính)
         var currentTrack = bodySkeletonAnim.AnimationState.GetCurrent(0);
 
         if (currentTrack != null)
         {
-            // Nếu đang chạy 1 trong các interactive animation thì báo là ĐANG BẬN
             foreach (var animName in animationNames)
             {
                 if (currentTrack.Animation.Name == animName && !currentTrack.IsComplete)
                 {
-                    return true; // Đang bận anim, return
+                    return true;
                 }
             }
         }
 
-        return false; // Đang không có anim
+        return false;
     }
+
 
     public void PlayRandomAnimation()
     {
-        // Nếu đang bận diễn thì thôi, không random nữa
-        if (IsBodyPlayingAnimation()) return;
 
-        // Nếu rảnh thì chạy
-        int randomIndex = Random.Range(1, this.animationNames.Length);
-        this.PlayAnimation(this.animationNames[randomIndex]);
+        if (IsBodyPlayingAnimation())
+        {
+            return;
+        }
+
+        int randomIndex = Random.Range(1, animationNames.Length);
+        PlayAnimation(animationNames[randomIndex]);
     }
-    protected virtual void PlayPose(String name)
+    public virtual void PlayPose(EPOSEDOLL type)
     {
-        skeletons[(int)EITEMDOLL.BODY].PlayAnimation(name);
+        skeletons[(int)EITEMDOLL.BODY].PlayAnimation(poseName[(int)type]);
+        skeletons[(int)EITEMDOLL.BODYUP].PlayAnimation(poseName[(int)type]);
+
     }
 
     // Hàm xác định loại nào là thân trên
@@ -254,11 +259,10 @@ public class DollController : MonoBehaviour
             case EITEMDOLL.GLASSES:
             case EITEMDOLL.HAT:
             case EITEMDOLL.JEWELRY:
-            case EITEMDOLL.SHIRT:    // Áo thường tính là thân trên
-            case EITEMDOLL.JACKET:   // Áo khoác thân trên
+            case EITEMDOLL.SHIRT:
+            case EITEMDOLL.JACKET:
                 return true;
 
-            // Các loại còn lại (Quần, Giày, Váy, Cánh, Đuôi...) thì để view toàn thân
             default:
                 return false;
         }
@@ -268,15 +272,9 @@ public class DollController : MonoBehaviour
     public void SwitchView(EITEMDOLL type)
     {
         bool isUpper = IsUpperBody(type);
-
         Vector3 targetPos = isUpper ? upperBodyPos : defaultPos;
         Vector3 targetScale = isUpper ? upperBodyScale : defaultScale;
-
-        // DOKill: Hủy ngay lập tức các chuyển động cũ nếu đang chạy dở
         transform.DOKill();
-
-        // Chuyển vị trí (Local Move)
-        // .SetEase(Ease.OutCubic): Hiệu ứng trượt nhẹ nhàng
         transform.DOLocalMove(targetPos, animDuration).SetEase(Ease.OutCubic);
 
         transform.DOScale(targetScale, animDuration).SetEase(Ease.OutCubic);

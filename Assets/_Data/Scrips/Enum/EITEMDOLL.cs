@@ -18,7 +18,8 @@ public enum EITEMDOLL
     JEWELRY = 15,
     BAG = 16,
     HAIR = 17,
-    HAT = 18
+    HAT = 18,
+    BODYUP= 19
 }
 
 public enum THUMB_DOLL

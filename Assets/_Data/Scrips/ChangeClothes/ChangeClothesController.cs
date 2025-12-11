@@ -29,8 +29,7 @@ public class ChangeClothesController : MonoBehaviour
     [SerializeField] private Transform rightObj;
     [SerializeField] private Transform headObj;
     [SerializeField] private Transform changeClothes;
-
-
+    [SerializeField] private GameObject UIPhoTo;
     private void Awake()
     {
         Instance = this;
@@ -141,7 +140,11 @@ public class ChangeClothesController : MonoBehaviour
                 .OnComplete(() => { headObj.gameObject.SetActive(false); });
 
         changeClothes.DOLocalMove(changeClothes.localPosition + new Vector3(0f, -700f, 0f), 1f).SetEase(Ease.InOutBack)
-                .OnComplete(() => { changeClothes.gameObject.SetActive(false); });
+                .OnComplete(() =>
+                {
+                    changeClothes.gameObject.SetActive(false);
+                    UIPhoTo.SetActive(true);
+                });
 
 
 

@@ -8,20 +8,25 @@ public class BaseItemDoll : MonoBehaviour
     [SerializeField] protected EITEMDOLL typeDoll;
     protected SkeletonAnimation _currentSkeleton;
 
-    protected virtual void Awake()
-    {
+    // protected virtual void Awake()
+    // {
+    //     // _currentSkeleton = GetComponent<SkeletonAnimation>();
+    //     // _currentSkeleton.Skeleton.SetAttachment("bang", null);
 
-    }
+    // }
     public virtual void Init(SkeletonDataAsset dataSkeleton)
     {
+
         gameObject.SetActive(true);
+        _currentSkeleton = GetComponent<SkeletonAnimation>();
         _currentSkeleton.skeletonDataAsset = dataSkeleton;
-        _currentSkeleton.Initialize(true); 
+        _currentSkeleton.Initialize(true);
     }
 
     protected virtual void OnEnable()
     {
         _currentSkeleton = GetComponent<SkeletonAnimation>();
+
     }
 
 
@@ -42,8 +47,9 @@ public class BaseItemDoll : MonoBehaviour
 
     public virtual void PlayAnimation(String name)
     {
+
         _currentSkeleton.state.SetAnimation(0, name, false);
     }
-    
+
 
 }

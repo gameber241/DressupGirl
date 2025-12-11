@@ -22,6 +22,7 @@ public class SkeletonFollow : MonoBehaviour
 
         _master = bodySketeton.Skeleton;
         _skeletonCurrent = _currentSkeleton.Skeleton;
+        
     }
 
     protected virtual void Update()

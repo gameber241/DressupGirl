@@ -1,5 +1,164 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1069656706947552730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929404229652687132}
+  - component: {fileID: 7492560287023019266}
+  - component: {fileID: 1201192086208248726}
+  - component: {fileID: 2695042782583687722}
+  - component: {fileID: 8498035200377946013}
+  - component: {fileID: 6070572787294267090}
+  m_Layer: 0
+  m_Name: BodyUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1929404229652687132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069656706947552730}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5348552952211857572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7492560287023019266
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069656706947552730}
+  m_Mesh: {fileID: 0}
+--- !u!23 &1201192086208248726
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069656706947552730}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 30497cada68d579468d04379f80d2970, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 14
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2695042782583687722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069656706947552730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: spine-unity::Spine.Unity.SkeletonAnimation
+  skeletonDataAsset: {fileID: 11400000, guid: 411b65aef42c6d74eb14a652095f3882, type: 2}
+  initialSkinName: 
+  fixPrefabOverrideViaMeshFilter: 2
+  initialFlipX: 0
+  initialFlipY: 0
+  updateWhenInvisible: 3
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  fixDrawOrder: 0
+  addNormals: 0
+  calculateTangents: 0
+  maskInteraction: 0
+  maskMaterials:
+    materialsMaskDisabled: []
+    materialsInsideMask: []
+    materialsOutsideMask: []
+  disableRenderingOnOverride: 1
+  _animationName: 
+  loop: 1
+  timeScale: 1
+--- !u!114 &8498035200377946013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069656706947552730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f726fb798ad621458c431cb9966d91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: spine-unity::Spine.Unity.SkeletonUtility
+  boneRoot: {fileID: 0}
+  flipBy180DegreeRotation: 0
+  skeletonRenderer: {fileID: 2695042782583687722}
+  skeletonGraphic: {fileID: 0}
+--- !u!114 &6070572787294267090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069656706947552730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09577b55b829eea4b88a160f620d820b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BodyUpDoll
+  typeDoll: 19
 --- !u!1 &1097367162554593841
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +347,7 @@ GameObject:
   - component: {fileID: 3042581453337799975}
   - component: {fileID: 3426628681222845256}
   - component: {fileID: 645775114490365991}
-  - component: {fileID: 5261559546517759081}
+  - component: {fileID: 4885228423770065743}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -285,16 +444,15 @@ MonoBehaviour:
   initialFlipX: 0
   initialFlipY: 0
   updateWhenInvisible: 3
-  separatorSlotNames:
-  - esrR
+  separatorSlotNames: []
   zSpacing: 0
   useClipping: 1
-  immutableTriangles: 0
+  immutableTriangles: 1
   pmaVertexColors: 1
-  clearStateOnDisable: 0
+  clearStateOnDisable: 1
   tintBlack: 0
-  singleSubmesh: 0
-  fixDrawOrder: 0
+  singleSubmesh: 1
+  fixDrawOrder: 1
   addNormals: 0
   calculateTangents: 0
   maskInteraction: 0
@@ -322,7 +480,7 @@ MonoBehaviour:
   flipBy180DegreeRotation: 0
   skeletonRenderer: {fileID: 3426628681222845256}
   skeletonGraphic: {fileID: 0}
---- !u!114 &5261559546517759081
+--- !u!114 &4885228423770065743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -331,9 +489,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183221840495639728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603ff7dacefea6e40a4c3fb16e6bae2e, type: 3}
+  m_Script: {fileID: 11500000, guid: e38b3bdea7472f54393a8f21259476f7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseItemDoll
+  m_EditorClassIdentifier: Assembly-CSharp::BodyDoll
   typeDoll: 4
 --- !u!1 &1371247775766191305
 GameObject:
@@ -581,7 +739,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 18
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &57615007234157711
 MonoBehaviour:
@@ -737,7 +895,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingOrder: 15
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2623407323593123475
 MonoBehaviour:
@@ -893,7 +1051,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 15
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &6693250859940007373
 MonoBehaviour:
@@ -1049,7 +1207,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingOrder: 16
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3166790736612840920
 MonoBehaviour:
@@ -1340,7 +1498,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a7a743afe29abae4fb96f4665b428a6d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1397,7 +1555,7 @@ MonoBehaviour:
     materialsMaskDisabled:
     - {fileID: 2100000, guid: 1cc39cadd500f93439fc0b8ac9518fa1, type: 2}
     materialsInsideMask:
-    - {fileID: 2100000, guid: a7a743afe29abae4fb96f4665b428a6d, type: 2}
+    - {fileID: 0}
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
   _animationName: 
@@ -1519,7 +1677,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 18
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3083468829400204249
 MonoBehaviour:
@@ -2299,7 +2457,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 17
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &7423416118856251404
 MonoBehaviour:
@@ -2556,6 +2714,7 @@ Transform:
   - {fileID: 7403622705659286497}
   - {fileID: 1415131583511966633}
   - {fileID: 9005669152069202628}
+  - {fileID: 1929404229652687132}
   - {fileID: 202115044633138049}
   - {fileID: 8069907738542030128}
   - {fileID: 2112027107372358342}
@@ -2589,7 +2748,7 @@ MonoBehaviour:
   - {fileID: 7205549595905547999}
   - {fileID: 7271429215676687540}
   - {fileID: 1948440185846612451}
-  - {fileID: 5261559546517759081}
+  - {fileID: 4885228423770065743}
   - {fileID: 7863436905133430572}
   - {fileID: 1699001381512200273}
   - {fileID: 4067161170535240853}
@@ -2604,6 +2763,7 @@ MonoBehaviour:
   - {fileID: 586562127368471731}
   - {fileID: 5111947732899810346}
   - {fileID: 1199886597327836175}
+  - {fileID: 6070572787294267090}
   animationNames:
   - interactive1
   - interactive2
@@ -2617,6 +2777,11 @@ MonoBehaviour:
   - pose5
   - pose6
   - stand
+  defaultPos: {x: 0, y: -3.6, z: 0}
+  defaultScale: {x: 1.3, y: 1.3, z: 1}
+  upperBodyPos: {x: 0, y: -25, z: 0}
+  upperBodyScale: {x: 3, y: 3, z: 1}
+  animDuration: 0.5
 --- !u!1 &7618686830071351816
 GameObject:
   m_ObjectHideFlags: 0
